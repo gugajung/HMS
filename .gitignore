@@ -4,4 +4,3 @@
 *.table
 errors/*
 databases/*
-sessions/*
