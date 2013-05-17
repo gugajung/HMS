@@ -1,0 +1,6 @@
+*.pyc
+.DS_STORE
+*.log
+*.table
+errors/*
+databases/*

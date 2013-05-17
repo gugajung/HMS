@@ -1,0 +1,27 @@
+{{extend 'layout.html'}}
+
+<h2>Ganancias totales: {{=gananciasTotales}}</h2>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mes', 'Reservaciones'],
+          ['Enero',  1000],
+          ['Febrero',  1170],
+          ['Mayo',  660],
+          ['Abril',  1030]
+        ]);
+
+        var options = {
+          title: 'Histórico de reservaciones'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+     <center><div id="chart_div" style="width: 700px; height: 300px;"></div></center>
